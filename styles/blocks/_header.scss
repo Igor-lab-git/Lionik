@@ -1,0 +1,83 @@
+.header {
+  padding-top: 30px;
+
+  @include tablet {
+    padding-top: 15px;
+  }
+
+  &__inner {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+
+    @include desktop {
+      column-gap: 35px;
+    }
+
+    @include tablet {
+      column-gap: 25px;
+    }
+
+    @include middle {
+      column-gap: 20px;
+    }
+  }
+
+  &__menu {
+    margin-left: auto;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 50px;
+
+      @include desktop {
+        column-gap: 35px;
+      }
+
+      @include tablet {
+        column-gap: 30px;
+      }
+
+      @include middle {
+        column-gap: 25px;
+      }
+    }
+
+    &-link {
+      @include hover {
+        color: var(--color-blue-hover);
+      }
+
+      position: relative;
+      display: inline-flex;
+      height: 40px;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-dark);
+
+      &:active {
+        color: var(--color-blue);
+        text-decoration: underline;
+      }
+
+      @include tablet {
+        font-size: 14px;
+      }
+
+      @include middle {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__button {
+    padding: 15px 35px;
+
+    @include tablet {
+      padding: 10px 25px;
+    }
+  }
+}

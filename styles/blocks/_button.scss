@@ -1,0 +1,19 @@
+.button {
+  @include hover {
+    background-color: var(--color-blue-hover);
+  }
+
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  border-radius: var(--border-radius-small);
+  color: var(--color-light);
+  background-color: var(--color-blue);
+  cursor: pointer;
+
+  &:active {
+    outline: 1px solid var(--color-blue-hover);
+    outline-offset: 2px;
+    background-color: #0e3b6c;
+  }
+}

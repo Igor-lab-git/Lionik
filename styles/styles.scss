@@ -7,7 +7,8 @@
 "./base/utils",
 "./base/globals";
 
-
-// body {
-//     transition-duration: 0ms;
-// }
+@import 
+"./blocks/logo",
+"./blocks/button",
+"./blocks/burger-button",
+"./blocks/header.scss";

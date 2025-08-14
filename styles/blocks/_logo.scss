@@ -1,0 +1,8 @@
+.logo {
+  &__image {
+    @include tablet {
+      width: 80px;
+      height: 30px;
+    }
+  }
+}

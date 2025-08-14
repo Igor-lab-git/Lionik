@@ -223,7 +223,21 @@ svg * {
   }
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
 body {
+  font-size: clamp(14px, 0.9090909091vw, 14px);
   font-family: var(--font-family-base);
   font-weight: 400;
   background-color: var(--color-light);
@@ -236,4 +250,190 @@ input,
 textarea,
 svg * {
   transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: clamp(36px, 2.3376623377vw, 36px);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--color-dark);
+}
+
+h3 {
+  font-size: clamp(20px, 1.2987012987vw, 20px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-dark);
+}
+
+@media (max-width: 1023px) {
+  .logo__image {
+    width: 80px;
+    height: 30px;
+  }
+}
+
+.button {
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  border-radius: var(--border-radius-small);
+  color: var(--color-light);
+  background-color: var(--color-blue);
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .button:hover {
+    background-color: var(--color-blue-hover);
+  }
+}
+@media (hover: none) {
+  .button:active {
+    background-color: var(--color-blue-hover);
+  }
+}
+.button:active {
+  outline: 1px solid var(--color-blue-hover);
+  outline-offset: 2px;
+  background-color: #0e3b6c;
+}
+
+.burger-button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 40px;
+  aspect-ratio: 1;
+  position: relative;
+  border: 2px solid var(--color-blue);
+  border-radius: var(--border-radius-small);
+}
+@media (hover: hover) {
+  .burger-button:hover {
+    color: var(--color-blue-hover);
+  }
+}
+@media (hover: none) {
+  .burger-button:active {
+    color: var(--color-blue-hover);
+  }
+}
+.burger-button::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: var(--color-blue);
+  border-radius: 10px;
+  box-shadow: 0 -6px var(--color-blue), 0 6px var(--color-blue);
+}
+
+.header {
+  padding-top: 30px;
+}
+@media (max-width: 1023px) {
+  .header {
+    padding-top: 15px;
+  }
+}
+.header__inner {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+@media (max-width: 1280px) {
+  .header__inner {
+    -moz-column-gap: 35px;
+         column-gap: 35px;
+  }
+}
+@media (max-width: 1023px) {
+  .header__inner {
+    -moz-column-gap: 25px;
+         column-gap: 25px;
+  }
+}
+@media (max-width: 850px) {
+  .header__inner {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+}
+.header__menu {
+  margin-left: auto;
+}
+.header__menu-list {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+@media (max-width: 1280px) {
+  .header__menu-list {
+    -moz-column-gap: 35px;
+         column-gap: 35px;
+  }
+}
+@media (max-width: 1023px) {
+  .header__menu-list {
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+}
+@media (max-width: 850px) {
+  .header__menu-list {
+    -moz-column-gap: 25px;
+         column-gap: 25px;
+  }
+}
+.header__menu-link {
+  position: relative;
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+@media (hover: hover) {
+  .header__menu-link:hover {
+    color: var(--color-blue-hover);
+  }
+}
+@media (hover: none) {
+  .header__menu-link:active {
+    color: var(--color-blue-hover);
+  }
+}
+.header__menu-link:active {
+  color: var(--color-blue);
+  text-decoration: underline;
+}
+@media (max-width: 1023px) {
+  .header__menu-link {
+    font-size: 14px;
+  }
+}
+@media (max-width: 850px) {
+  .header__menu-link {
+    font-size: 13px;
+  }
+}
+.header__button {
+  padding: 15px 35px;
+}
+@media (max-width: 1023px) {
+  .header__button {
+    padding: 10px 25px;
+  }
 }/*# sourceMappingURL=styles.css.map */
