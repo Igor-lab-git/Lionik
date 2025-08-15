@@ -1,3 +1,21 @@
 .section {
-    padding-block: 87px 160px;
+  padding-block: 87px 160px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 54px;
+
+  &--padding {
+    padding-block: 76px 170px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  &__description {
+    @include fluid-text(16, 16);
+  }
 }

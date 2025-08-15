@@ -1,11 +1,28 @@
 .hero {
-  background: url("../../images/images/hero/hero-bg.webp");
-  background-size: cover; 
+  background: url("../../images/images/hero/hero-bg.webp") no-repeat;
   width: 100%;
-  height: 550px; 
+  height: 50%;
+
+  @include tablet {
+    background: none;
+  }
 
   &--padding-block {
     padding-block: 113px;
+
+    @include desktop {
+      padding-block: 75px;
+      padding-inline: 30px;
+    }
+
+    @include tablet {
+      padding-block: 50px;
+    }
+
+    @include mobile {
+      padding-top: 30px;
+      padding-bottom: 60px;
+    }
   }
 
   &__body {
@@ -15,7 +32,12 @@
   &__title {
     @include fluid-text(40, 40);
 
-    margin-bottom: 25px
+    line-height: 1.3;
+    margin-bottom: 25px;
+
+    @include desktop {
+      margin-bottom: 15px;
+    }
   }
 
   &__description {
@@ -23,19 +45,38 @@
 
     max-width: 470px;
     line-height: 1.5;
-    margin-bottom: 35px
-  }
+    margin-bottom: 35px;
 
-  &__subscribe {
-    @include flex-center(false);
-
-    flex-direction: column;
-    row-gap: 14px;
-
-    &-button {
-        padding: 19px 58px;
+    @include desktop {
+      margin-bottom: 15px;
     }
   }
 
+  &__subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 14px;
 
+    &-button {
+      padding: 19px 58px;
+
+      @include mobile-s {
+        width: 290px;
+      }
+    }
+
+    &-secured {
+      display: flex;
+      align-items: center;
+      column-gap: 13px;
+      margin-left: calc(250px / 2);
+      transform: translateX(-50%);
+      text-align: center;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--color-text);
+    }
+  }
 }
