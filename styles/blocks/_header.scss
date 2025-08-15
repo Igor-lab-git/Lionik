@@ -1,26 +1,39 @@
 .header {
   padding-top: 30px;
+  border: var(--border);
 
   @include tablet {
+    padding-top: 20px;
+  }
+
+  @include mobile {
     padding-top: 15px;
   }
 
   &__inner {
     height: 80px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     column-gap: 50px;
 
     @include desktop {
       column-gap: 35px;
+      padding-inline: 30px;
+      
     }
 
     @include tablet {
       column-gap: 25px;
+      height: 60px;
     }
 
-    @include middle {
-      column-gap: 20px;
+    @include mobile {
+      column-gap: 7px;
+      height: 55px;
+    }
+
+    @include mobile-s {
+      padding-inline: 15px;
     }
   }
 
@@ -42,6 +55,10 @@
 
       @include middle {
         column-gap: 25px;
+      }
+
+      @include mobile {
+        justify-content: space-between;
       }
     }
 
@@ -78,6 +95,10 @@
 
     @include tablet {
       padding: 10px 25px;
+    }
+
+    @include mobile {
+      margin-left: auto;
     }
   }
 }
