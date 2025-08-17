@@ -1,5 +1,6 @@
 @import 
 "./base/normalize",
+"./base/reset",
 "./base/fonts",
 "./base/mixins",
 "./base/media",
@@ -11,6 +12,7 @@
 "./blocks/logo",
 "./blocks/button",
 "./blocks/section",
+"./blocks/header-section",
 "./blocks/grid",
 "./blocks/burger-button",
 "./blocks/mobile-overlay",
@@ -18,4 +20,6 @@
 "./blocks/header.scss",
 "./blocks/hero",
 "./blocks/services",
-"./blocks/services-card";
+"./blocks/services-card",
+"./blocks/article",
+"./blocks/article-card";

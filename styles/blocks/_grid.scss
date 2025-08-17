@@ -1,36 +1,45 @@
-
 .grid {
-    --gridColums: 1; // По умолчанию 1 колонка
+  --gridColums: 1; // По умолчанию 1 колонка
 
-    display: grid;
-    grid-template-columns: repeat(var(--gridColums), 1fr); // Создаёт колонки
-    gap: 30px; // Отступ между элементами
+  display: grid;
+  grid-template-columns: repeat(var(--gridColums), 1fr); // Создаёт колонки
+  gap: 30px; // Отступ между элементами
+
+  @include mobile {
+    gap: 30px;
+  }
+
+  @for $i from 2 through 12 {
+    // перебирает числа от 2 до 12 колонок  Этот цикл генерирует дополнительные классы:
+    &--#{$i} {
+      //подставляет текущее число ($i) в имя класса
+      --gridColums: #{$i}; // Меняем переменную  обновляет переменную (число колонок)
+    }
+  }
+
+  &--1 {
+    --gridColums: 4;
+    @include tablet {
+      column-gap: 16px;
+    }
+
+    @include tablet {
+     --gridColums: 2;
+     justify-items: center;
+    }
+  }
+
+  &--2 {
+    --gridColums: 2;
+
+    @include tablet {
+     --gridColums: 1;
+    }
 
     @include mobile {
-        gap: 30px;
+      row-gap: 15px;
     }
-
-    @for $i from 2 through 12 { // перебирает числа от 2 до 12 колонок  Этот цикл генерирует дополнительные классы:
-        &--#{$i} { //подставляет текущее число ($i) в имя класса
-            --gridColums: #{$i}; // Меняем переменную  обновляет переменную (число колонок)
-        }
-    }
-
-    &--2 {
-        @include tablet {
-            --gridColums: 1;
-        }
-    }
-
-    &--3 {
-        @include desktop {
-            --gridColums: 2; 
-        }
-
-        @include mobile {
-            --gridColums: 1; 
-        }
-    }
+  }
 }
 
 //потом в html коде добавляем классы .grid и .grid--2 (2 колонки) столько колонок сколько нужно
