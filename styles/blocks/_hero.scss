@@ -1,81 +1,62 @@
 .hero {
-  background: url("../../images/images/hero/hero-bg.webp") no-repeat;
-  width: 100%;
-  height: 50%;
+  max-width: 530px;
+  padding-block: 113px 134px;
 
-  @include tablet {
-    background: none;
+  @include mobile {
+    padding-block: 60px 80px;
   }
 
-  &--padding-block {
-    padding-block: 113px;
-
-    @include desktop {
-      padding-block: 75px;
-    }
-
-    @include tablet {
-      padding-block: 50px;
-    }
-
-    @include mobile {
-      padding-top: 30px;
-      padding-bottom: 60px;
-    }
-  }
-
-  &__body {
-    max-width: 530px;
+  @include mobile-s {
+    padding-block: 30px 60px;
   }
 
   &__title {
-    @include fluid-text(40, 40);
+    margin-bottom: 26px;
 
-    line-height: 1.3;
-    margin-bottom: 25px;
-
-    @include desktop {
+    @include mobile-s {
       margin-bottom: 15px;
     }
   }
 
   &__description {
     @include fluid-text(16, 16);
-
-    max-width: 470px;
-    line-height: 1.5;
-    margin-bottom: 35px;
-
-    @include desktop {
+    @include mobile-s {
       margin-bottom: 15px;
     }
+
+    margin-bottom: 34px;
+    max-width: 470px;
+    line-height: 1.5;
   }
 
   &__subscribe {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    position: relative;
+    display: inline-block;
     row-gap: 14px;
+  }
 
-    &-button {
-      padding: 19px 58px;
-
-      @include mobile-s {
-        width: 290px;
-      }
+  &__subscribe-button {
+    @include mobile-s {
+      width: 290px;
     }
+    
+    padding: 19px 58px;
+  }
 
-    &-secured {
-      display: flex;
-      align-items: center;
-      column-gap: 13px;
-      margin-left: calc(250px / 2);
-      transform: translateX(-50%);
-      text-align: center;
-      font-weight: 400;
-      font-size: 11px;
-      line-height: 1.5;
-      color: var(--color-text);
-    }
+  &__subscribe-secured-wrapper {
+    position: absolute;
+    bottom: -24px; /* Смещение вниз (под кнопку) */
+    left: 50%;
+    transform: translateX(-50%); /* Центрирование */
+    white-space: nowrap; /* Чтобы текст не переносился */
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  &__subscribe-secured {
+    @include fluid-text(11, 11);
+
+    line-height: 1.5;
   }
 }

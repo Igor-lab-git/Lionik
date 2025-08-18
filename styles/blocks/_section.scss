@@ -2,8 +2,18 @@
   padding-block: 87px 160px;
   border-bottom: var(--border);
 
-  &--hidden-x {
-    overflow-x: hidden;
+  &--hero {
+    position: relative;
+    padding-block: 0;
+    width: 100%;
+    height: 550px;
+    background: url("../../images/images/hero/hero-bg.webp") center/cover
+      no-repeat;
+    border-bottom: none;
+
+    @include mobile {
+      background: none;
+    }
   }
 
   &__header {
@@ -16,14 +26,4 @@
     }
   }
 
-  @include mobile {
-        padding-block: 60px;
-      }
-
-  &--padding {
-    padding-block: 76px 170px;
-  }
-  @include mobile {
-    padding-block: 60px;
-  }
 }

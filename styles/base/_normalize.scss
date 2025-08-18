@@ -76,14 +76,6 @@
  a {
   background-color: transparent;
  }
-
- /**
-  Убираем стандартный маркер маркированному списку,
-  у которого есть атрибут class
- */
-:where(ul[class]) {
-    list-style: none;
-  }
  
  /**
   * 1. Remove the bottom border in Chrome 57-

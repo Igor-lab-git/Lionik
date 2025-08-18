@@ -67,14 +67,6 @@ a {
 }
 
 /**
- Убираем стандартный маркер маркированному списку,
- у которого есть атрибут class
-*/
-:where(ul[class]) {
-  list-style: none;
-}
-
-/**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
@@ -317,38 +309,6 @@ template {
   display: none;
 }
 
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-::after {
-  box-sizing: inherit;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
-
-a {
-  display: inline-block;
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  word-break: normal;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-body {
-  min-width: 320px;
-  word-break: normal;
-}
-
 @font-face {
   font-family: "OpenSans";
   src: url("../../fonts/OpenSans-Light.woff2") format("woff2");
@@ -392,7 +352,7 @@ body {
 }
 
 .container {
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  max-width: var(--container-width);
   margin-inline: auto;
   padding-inline: var(--container-padding-x);
 }
@@ -448,25 +408,32 @@ body {
   overflow: hidden !important;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   font-size: clamp(14px, 0.9090909091vw, 14px);
   font-family: var(--font-family-base);
   font-weight: 400;
+  color: var(--color-text);
   background-color: var(--color-light);
 }
 
-a,
-button,
-input,
-textarea,
-svg * {
-  transition-duration: var(--transition-duration);
-}
-
-a {
-  display: inline-block;
-  color: inherit;
-  text-decoration: none;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 h1 {
@@ -490,18 +457,44 @@ h3 {
   color: var(--color-dark);
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
 }
 
-p {
-  color: var(--color-text);
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+body {
+  min-width: 320px;
+  word-break: normal;
+}
+
+li,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 @media (max-width: 1023px) {
@@ -540,8 +533,18 @@ p {
   padding-block: 87px 160px;
   border-bottom: var(--border);
 }
-.section--hidden-x {
-  overflow-x: hidden;
+.section--hero {
+  position: relative;
+  padding-block: 0;
+  width: 100%;
+  height: 550px;
+  background: url("../../images/images/hero/hero-bg.webp") center/cover no-repeat;
+  border-bottom: none;
+}
+@media (max-width: 767px) {
+  .section--hero {
+    background: none;
+  }
 }
 .section__header:not(:last-child) {
   margin-bottom: 45px;
@@ -549,19 +552,6 @@ p {
 @media (max-width: 767px) {
   .section__header:not(:last-child) {
     margin-bottom: 15px;
-  }
-}
-@media (max-width: 767px) {
-  .section {
-    padding-block: 60px;
-  }
-}
-.section--padding {
-  padding-block: 76px 170px;
-}
-@media (max-width: 767px) {
-  .section {
-    padding-block: 60px;
   }
 }
 
@@ -894,62 +884,41 @@ p {
 }
 
 .hero {
-  background: url("../../images/images/hero/hero-bg.webp") no-repeat;
-  width: 100%;
-  height: 50%;
-}
-@media (max-width: 1023px) {
-  .hero {
-    background: none;
-  }
-}
-.hero--padding-block {
-  padding-block: 113px;
-}
-@media (max-width: 1280px) {
-  .hero--padding-block {
-    padding-block: 75px;
-  }
-}
-@media (max-width: 1023px) {
-  .hero--padding-block {
-    padding-block: 50px;
-  }
+  max-width: 530px;
+  padding-block: 113px 134px;
 }
 @media (max-width: 767px) {
-  .hero--padding-block {
-    padding-top: 30px;
-    padding-bottom: 60px;
+  .hero {
+    padding-block: 60px 80px;
   }
 }
-.hero__body {
-  max-width: 530px;
+@media (max-width: 480px) {
+  .hero {
+    padding-block: 30px 60px;
+  }
 }
 .hero__title {
-  font-size: clamp(40px, 2.5974025974vw, 40px);
-  line-height: 1.3;
-  margin-bottom: 25px;
+  margin-bottom: 26px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 480px) {
   .hero__title {
     margin-bottom: 15px;
   }
 }
 .hero__description {
   font-size: clamp(16px, 1.038961039vw, 16px);
+  margin-bottom: 34px;
   max-width: 470px;
   line-height: 1.5;
-  margin-bottom: 35px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 480px) {
   .hero__description {
     margin-bottom: 15px;
   }
 }
 .hero__subscribe {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  position: relative;
+  display: inline-block;
   row-gap: 14px;
 }
 .hero__subscribe-button {
@@ -960,18 +929,19 @@ p {
     width: 290px;
   }
 }
-.hero__subscribe-secured {
+.hero__subscribe-secured-wrapper {
+  position: absolute;
+  bottom: -24px; /* Смещение вниз (под кнопку) */
+  left: 50%;
+  transform: translateX(-50%); /* Центрирование */
+  white-space: nowrap; /* Чтобы текст не переносился */
   display: flex;
   align-items: center;
-  -moz-column-gap: 13px;
-       column-gap: 13px;
-  margin-left: 125px;
-  transform: translateX(-50%);
-  text-align: center;
-  font-weight: 400;
-  font-size: 11px;
+  gap: 13px;
+}
+.hero__subscribe-secured {
+  font-size: clamp(11px, 0.7142857143vw, 11px);
   line-height: 1.5;
-  color: var(--color-text);
 }
 
 .services-card {
