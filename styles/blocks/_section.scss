@@ -2,7 +2,11 @@
   padding-block: 87px 160px;
   border-bottom: var(--border);
 
-  &--hero {
+  @include mobile {
+    padding-block: 30px;
+  }
+
+  &--hero-banner {
     position: relative;
     padding-block: 0;
     width: 100%;
@@ -13,12 +17,33 @@
 
     @include mobile {
       background: none;
+      height: auto;
     }
   }
 
-  &__header {
+  // &__header {
+  //   &:not(:last-child) {
+  //     margin-bottom: 45px;
+
+  //     @include mobile {
+  //       margin-bottom: 15px;
+  //     }
+  //   }
+  // }
+
+  &__header--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 21px;
+
+    @include mobile {
+      align-items: normal;
+      row-gap: 15px;
+    }
+
     &:not(:last-child) {
-      margin-bottom: 45px;
+      margin-bottom: 54px;
 
       @include mobile {
         margin-bottom: 15px;
@@ -26,4 +51,7 @@
     }
   }
 
+  &__description {
+    @include fluid-text(16, 16);
+  }
 }

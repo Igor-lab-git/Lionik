@@ -1,6 +1,6 @@
 .header {
   padding-top: 30px;
-  border: var(--border);
+  border-bottom: var(--border);
 
   @include tablet {
     padding-top: 20px;
