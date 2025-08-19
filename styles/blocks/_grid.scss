@@ -41,6 +41,14 @@
       --gridColums: 1;
     }
   }
+
+  &--5 {
+    --gridColums: 3;
+
+    @include mobile {
+      --gridColums: 1;
+    }
+  }
 }
 
 //потом в html коде добавляем классы .grid и .grid--2 (2 колонки) столько колонок сколько нужно

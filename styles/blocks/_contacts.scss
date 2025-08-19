@@ -1,0 +1,67 @@
+.contacts-card {
+  width: 100%;
+
+  @include mobile-s {
+  }
+
+  &__icon {
+    @include square(29px);
+
+    margin-bottom: 20px;
+
+    @include mobile-s {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--color-dark);
+
+     @include mobile-s {
+      margin-bottom: 10px;
+    }
+
+    @include hover {
+      color: var(--color-blue-hover);
+    }
+
+    &:active {
+      background-color: var(--color-blue);
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 17px;
+
+    @include mobile-s {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    max-width: 215px;
+    line-height: 1.8;
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    line-height: 1.8;
+
+    & a {
+      @include hover {
+        color: var(--color-blue-hover);
+      }
+
+      &:active {
+        color: var(--color-blue);
+      }
+    }
+  }
+}
