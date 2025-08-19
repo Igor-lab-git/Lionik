@@ -3,7 +3,7 @@
   border-bottom: var(--border);
 
   @include mobile {
-    padding-block: 30px;
+    padding-block: 60px;
   }
 
   &--hero-banner {
@@ -21,15 +21,15 @@
     }
   }
 
-  // &__header {
-  //   &:not(:last-child) {
-  //     margin-bottom: 45px;
+  &__header {
+    &:not(:last-child) {
+      margin-bottom: 42px;
 
-  //     @include mobile {
-  //       margin-bottom: 15px;
-  //     }
-  //   }
-  // }
+      @include mobile {
+        margin-bottom: 15px;
+      }
+    }
+  }
 
   &__header--center {
     display: flex;

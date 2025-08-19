@@ -1,6 +1,7 @@
 .hero {
   max-width: 530px;
   padding-block: 113px 134px;
+  overflow-x: hidden;
 
   @include mobile {
     padding-block: 60px 80px;

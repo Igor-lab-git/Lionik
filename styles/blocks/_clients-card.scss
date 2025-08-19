@@ -1,0 +1,33 @@
+.clients-card {
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: 31px;
+  padding: 51px 36px 32px;
+  width: 100%;
+  border: var(--border);
+  border-radius: var(--border-radius);
+
+  &__description {
+    line-height: 1.8;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: 17px;
+    padding-top: 28px;
+    border-top: var(--border);
+  }
+
+  &__avatar {
+    @include square(67px);
+    
+    border: 2px solid var(--color-blue);
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+}
