@@ -51,6 +51,12 @@
     }
   }
 
+  &__header--padding {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
   &__description {
     @include fluid-text(16, 16);
   }

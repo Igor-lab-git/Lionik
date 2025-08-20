@@ -1,0 +1,20 @@
+.join-us {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__body-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &--wrapper-agreement {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+    align-self: flex-end;
+  }
+}

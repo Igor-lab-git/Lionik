@@ -580,6 +580,9 @@ button {
     margin-bottom: 15px;
   }
 }
+.section__header--padding:not(:last-child) {
+  margin-bottom: 30px;
+}
 .section__description {
   font-size: clamp(16px, 1.038961039vw, 16px);
 }
@@ -684,6 +687,14 @@ button {
   .grid--5 {
     --gridColums: 1;
   }
+}
+.grid--6 {
+  --gridColums: 2;
+  gap: 20px;
+}
+.grid--7 {
+  --gridColums: 2;
+  gap: 20px;
 }
 
 .burger-button {
@@ -1268,4 +1279,71 @@ button {
 }
 .contacts-card__address a:active {
   color: var(--color-blue);
+}
+
+.join-us__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.join-us__body-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.join-us--wrapper-agreement {
+  display: flex;
+  flex-direction: column;
+  row-gap: 9px;
+  align-self: flex-end;
+}
+
+.field__input {
+  max-width: 290px;
+  width: 100%;
+  height: var(--input-heigth);
+  padding: 15px 28px;
+  outline: none;
+  border: var(--border-input);
+  border-radius: var(--border-radius-large);
+}
+@media (hover: hover) {
+  .field__input:hover {
+    border-color: var(--color-blue-hover);
+    background-color: rgba(113, 167, 226, 0.1254901961);
+  }
+}
+@media (hover: none) {
+  .field__input:active {
+    border-color: var(--color-blue-hover);
+    background-color: rgba(113, 167, 226, 0.1254901961);
+  }
+}
+.field__input:focus {
+  border: 1px solid #0e3b6c;
+  background-color: var(--color-light);
+}
+.field__input--textarea {
+  max-width: 670px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+.field__button {
+  padding: 20px 67px;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-large);
+  align-self: flex-end;
+}
+.field__agreement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  font-size: 12px;
+}
+.field__agreement a {
+  text-decoration: underline;
+  color: var(--color-blue-active);
 }/*# sourceMappingURL=styles.css.map */
