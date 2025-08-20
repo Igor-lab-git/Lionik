@@ -1,0 +1,74 @@
+.footer {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 54px;
+    padding-block: 45px;
+
+    @include desktop {
+      column-gap: 25px;
+    }
+
+    @include mobile {
+      column-gap: 5px;
+    }
+  }
+
+  &__logo {
+    @include flex-center;
+
+    column-gap: 20px;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        column-gap: 15px;
+      }
+  }
+
+  &__copyright {
+    font-size: 12px;
+  }
+
+  &__menu {
+    margin-left: auto;
+
+    @include middle {
+        margin-left: 0;
+      }
+
+    &-list {
+      @include flex-center;
+
+      column-gap: 28px;
+
+      @include tablet {
+        column-gap: 25px;
+      }
+
+      @include middle {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      height: 30px;
+      font-weight: 600;
+      font-size: 15px;
+
+      @include hover {
+        color: var(--color-blue-hover);
+      }
+
+      &:active {
+        text-decoration: underline;
+        color: var(--color-blue);
+      }
+    }
+  }
+}

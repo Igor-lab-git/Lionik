@@ -54,6 +54,10 @@
   &__header--padding {
     &:not(:last-child) {
       margin-bottom: 30px;
+
+      @include mobile {
+        margin-bottom: 15px;
+      }
     }
   }
 

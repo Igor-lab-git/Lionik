@@ -1,0 +1,23 @@
+.soc1als {
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+
+    @include tablet {
+      column-gap: 15px;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+  }
+
+  &__icon path {
+    @include hover {
+      fill: var(--color-blue-hover);
+    }
+  }
+}

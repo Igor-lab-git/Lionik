@@ -54,11 +54,24 @@
     --gridColums: 2;
     gap: 20px;
 
+    @include tablet {
+      --gridColums: 1;
+    }
+
+    @include mobile {
+      gap: 15px;
+    }
+
   }
 
   &--7 {
     --gridColums: 2;
     gap: 20px;
+
+    @include mobile {
+      --gridColums: 1;
+      gap: 15px;
+    }
 
   }
 }

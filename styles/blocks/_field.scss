@@ -1,6 +1,5 @@
 .field {
   &__input {
-    max-width: 290px;
     width: 100%;
     height: var(--input-heigth);
     padding: 15px 28px;
@@ -19,17 +18,26 @@
     }
 
     &--textarea {
-      max-width: 670px;
       width: 100%;
+      min-height: 140px;
       height: 100%;
       border-radius: 20px;
+
+      @include mobile-s {
+        min-height: 240px;
+      }
     }
   }
+
   &__button {
     padding: 20px 67px;
     text-transform: uppercase;
     border-radius: var(--border-radius-large);
     align-self: flex-end;
+
+    @include mobile-s {
+      width: 290px;
+    }
   }
 
   &__agreement {
